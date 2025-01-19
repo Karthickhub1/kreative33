@@ -3774,13 +3774,20 @@ img.u-pull-left {
     .s-intro__social {
         display : none;
     }
+
+    .s-intro__bg{
+        display: none;
+    }
+    .s-intro__content-bg {
+        width : 100%;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .s-intro__bg{
         display: none;
     }
-    
+
     .s-intro {
         --content-padding-top : 15vh;
     }
