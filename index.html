@@ -139,7 +139,7 @@
                     </div>
                     <div class="column lg-8 stack-on-1100 section-header__secondary">
                         <p class="desc" style="text-align: justify;">
-                            At kreative33, we believe everyone deserves to look and feel their best. As a unisex salon, we
+                            At Kreative33, we believe everyone deserves to look and feel their best. As a unisex salon, we
                             specialize in professional haircuts, makeup artistry, and creative tattoos for men and
                             women. Our expert team is committed to providing top-notch services tailored to your unique
                             style. Whether you're here for a fresh look, stunning makeup, or meaningful ink, we’re here
@@ -196,7 +196,7 @@
                         </div>
                         <div class="list-block__text">
                             <p>
-                                Step into a space designed to rejuvenate your mind and body. At kreative33, we prioritize
+                                Step into a space designed to rejuvenate your mind and body. At Kreative33, we prioritize
                                 your comfort with a clean, modern, and inviting environment that lets you unwind while
                                 we work our magic.
                             </p>
@@ -221,7 +221,7 @@
                     </div>
                     <div class="column lg-6 stack-on-1100 section-header__secondary">
                         <p class="desc">
-                            At kreative33, we offer a wide range of services designed to help you look and feel your best
+                            At Kreative33, we offer a wide range of services designed to help you look and feel your best
                         </p>
                     </div>
                 </div> <!-- end section-header -->
@@ -396,7 +396,7 @@
                     </div>
                     <div class="column lg-6 stack-on-1100 section-header__secondary">
                         <p class="desc">
-                            From stunning makeovers to intricate tattoos, explore our latest work that reflects our dedication to style and artistry. Each creation is crafted with precision and passion to meet our clients' unique preferences.
+                            From stunning makeovers to intricate tattoos, explore our latest work that reflects our dedication to style and artistry. Each creation is crafted with precision and passion to meet our clients unique preferences.
                         </p>
                     </div>
                 </div> <!-- end section-header -->
@@ -675,7 +675,7 @@
                 <div class="column lg-6 stack-on-1100 section-header__primary">
                     <h4 class="title " style="line-height: 37px;">
                         Whether it’s a bold tattoo, a fresh haircut, or a flawless makeup look, we’re here to bring your vision to life.
-                         Contact us at <a href="mailto:#0" title="">utalksatheesh@gmail.com</a>, and let’s create something amazing together!
+                         Contact us at <a href="mailto:#utalksatheesh@gmail.com" title="">utalksatheesh@gmail.com</a>, and let’s create something amazing together!
                         
                     </h4>
                 </div>
@@ -683,26 +683,33 @@
 
                     <div class="contact-block">
                         <h6>Where To Find Us</h6>
-                        <p>
-                            kreative33 Family Salon, TVS Bus Stop, <br>
-                            Salem - 636007
+                        <p><i class="fa fa-map-marker" style="font-size:36px"></i>
+                            TVS Bus Stop, Opposite Lakshmi Sweets,<br>
+                            Near Henry & Wolsey Bakery,<br>
+                            First Floor, Kreative33 Family Salon & Tattoos,<br>
+                            Omalur Main Road, Salem - 636007.
                         </p>
+                        <p><a href="https://maps.app.goo.gl/oxf6S91YYTmaKQ8aA">https://maps.app.goo.gl/oxf6S91YYTmaKQ8aA</a></p>
                     </div>
 
                     <div class="contact-block">
                         <h6>Contact Infos</h6>
                         <ul class="contact-list">
-                            <li><a href="tel:9788016067">+91 9788016067</a></li>
-                            <li><a href="tel:9360606067">+91 9360606067</a></li>
+                            <li><i class="fa fa-phone" style="font-size:36px"></i><a href="tel:9788016067">+91 9788016067</a></li>
+                            <li><i class="fa fa-phone" style="font-size:36px"></i><a href="tel:9360606067">+91 9360606067</a></li>
                         </ul>
                     </div>
 
-                    <div class="column list-block__item">
-                        <div class="s-footer__contact-btn">
-                            <a href="mailto:#0" class="btn btn--primary u-fullwidth">
-                                Let's Talk
-                            </a>
-                        </div>
+                    <div>
+                        <form id="emailForm" onsubmit="sendEmail(event)">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="user_name" placeholder="Enter your name" required>
+                    
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+                    
+                            <button type="submit">Send Email</button>
+                        </form>
                     </div>
 
                 </div>
@@ -726,7 +733,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://x.com/kreaative33?s=11" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
                                     <path
@@ -783,6 +790,22 @@
             const currentYear = new Date().getFullYear();
             document.getElementById('copyright').innerHTML = `© Copyright Kreative33 ${currentYear}`;
 
+            function sendEmail(event) {
+                event.preventDefault(); // Prevent form submission reload
+
+                // Get form values
+                const name = document.getElementById("name").value;
+                const message = document.getElementById("message").value;
+
+                // Fixed recipient email
+                const recipientEmail = "utalksatheesh@gmail.com";
+
+                // Compose the email using the `mailto:` protocol
+                const mailtoLink = `mailto:${recipientEmail}?subject=Message from ${name}&body=${encodeURIComponent(message)}`;
+
+                // Open the user's default email client
+                window.location.href = mailtoLink;
+            }
         </script>
 
 </body>
