@@ -4710,7 +4710,7 @@ img.u-pull-left {
 #emailForm button {
     display: inline-block;
     width: 100%;
-    padding: 12px;
+    /* padding: 12px; */
     background-color: #007bff;
     border: none;
     color: #fff;
