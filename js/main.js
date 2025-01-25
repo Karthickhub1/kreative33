@@ -196,6 +196,21 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            // Custom pagination with 4 dots
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderBullet: (index, className) => {
+                const dotLimit = 4; // Number of dots to display
+                const totalSlides = 4; // Limit pagination to 4
+                if (index < dotLimit) {
+                    return `<span class="${className}" style="opacity: ${
+                    index < totalSlides ? 1 : 0.5
+                    }"></span>`;
+                }
+                return "";
+                },
+            },
             breakpoints: {
                 // when window width is > 400px
                 401: {
